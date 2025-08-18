@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: getting-started-app
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: getting-started-app
+  template:
+    metadata:
+      labels:
+        app: getting-started-app
+    spec:
+      containers:
+      - name: getting-started-app
+        image: Sureshsinganaboinna/getting-started-app:latest  
+        ports:
+        - containerPort: 9091
